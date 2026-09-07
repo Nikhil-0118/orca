@@ -1,0 +1,124 @@
+import React, { useState, useEffect } from 'react';
+import { AlertTriangle, Radio, X } from 'lucide-react';
+import { useSos } from '../../hooks/useSos';
+
+export const SosConfirmationModal = ({
+  isOpen,
+  onClose,
+  lat,
+  lon,
+}) => {
+  const [countdown, setCountdown] = useState(5);
+  const [nature, setNature] = useState('UNKNOWN');
+  const { triggerSos, isTriggering, dispatchResult } = useSos();
+
+  useEffect(() => {
+    if (!isOpen) {
+      setCountdown(5);
+      return;
+    }
+
+    if (countdown > 0 && !dispatchResult) {
+      const timer = setTimeout(() => setCountdown((c) => c - 1), 1000);
+      return () => clearTimeout(timer);
+    } else if (countdown === 0 && !dispatchResult && !isTriggering) {
+      // Auto-dispatch on timer expiry
+      handleConfirm();
+    }
+  }, [isOpen, countdown, dispatchResult, isTriggering]);
+
+  const handleConfirm = () => {
+    const payload = {
+      vessel_id: 'IND-TN-02-MM-4412',
+      vessel_name: 'Matsya Sagar II',
+      crew_count: 4,
+      location: { latitude: lat, longitude: lon },
+      distress_nature: nature,
+    };
+    triggerSos(payload);
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 bg-black/60 dark:bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+      <div className="w-full max-w-lg rounded-3xl bg-white dark:bg-navy-950 border-2 border-red-500 p-6 text-slate-900 dark:text-slate-100 shadow-2xl shadow-red-950/40 space-y-4">
+        <div className="flex items-center justify-between border-b border-red-200 dark:border-red-900/50 pb-3">
+          <div className="flex items-center gap-2 text-red-600 dark:text-red-400 font-bold">
+            <AlertTriangle className="w-6 h-6 animate-bounce" />
+            <h3 className="text-lg">COAST GUARD DISTRESS BROADCAST</h3>
+          </div>
+          <button onClick={onClose} className="p-1 rounded-lg text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+
+        {!dispatchResult ? (
+          <>
+            <div className="text-center py-4 bg-red-50 border border-red-200 dark:bg-red-950/30 rounded-2xl dark:border-red-900/40">
+              <div className="text-4xl font-extrabold text-red-600 dark:text-red-500 font-mono">{countdown}s</div>
+              <p className="text-xs text-slate-600 dark:text-slate-300 mt-1">Broadcasting distress coordinates automatically...</p>
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">Nature of Distress</label>
+              <select
+                value={nature}
+                onChange={(e) => setNature(e.target.value)}
+                className="w-full bg-slate-100 border border-slate-300 dark:bg-slate-900 dark:border-slate-700 rounded-xl p-2.5 text-sm text-slate-900 dark:text-slate-200 focus:outline-none focus:border-red-500"
+              >
+                <option value="UNKNOWN">General Distress / Urgent Assistance</option>
+                <option value="ENGINE_FAILURE">Engine / Steering Failure</option>
+                <option value="CAPSIZING_SINKING">Taking Water / Sinking</option>
+                <option value="BAD_WEATHER_TRAPPED">Severe Cyclone / Trapped in High Swell</option>
+                <option value="MEDICAL_EMERGENCY">Critical Crew Medical Emergency</option>
+              </select>
+            </div>
+
+            <div className="flex gap-3 pt-2">
+              <button
+                onClick={onClose}
+                className="flex-1 py-3 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 font-semibold text-sm transition-all cursor-pointer"
+              >
+                CANCEL (FALSE ALARM)
+              </button>
+              <button
+                onClick={handleConfirm}
+                disabled={isTriggering}
+                className="flex-1 py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm shadow-lg shadow-red-600/40 transition-all cursor-pointer"
+              >
+                {isTriggering ? 'DISPATCHING...' : 'DISPATCH NOW'}
+              </button>
+            </div>
+          </>
+        ) : (
+          <div className="space-y-3">
+            <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-300 text-emerald-900 dark:bg-emerald-950/60 dark:border-emerald-700/80 text-xs dark:text-emerald-200 font-mono space-y-1">
+              <div className="flex items-center gap-2 font-bold text-emerald-600 dark:text-emerald-400">
+                <Radio className="w-4 h-4" />
+                <span>DISTRESS SIGNAL CONFIRMED (MRCC ACKNOWLEDGED)</span>
+              </div>
+              <div>Incident ID: {dispatchResult.incident_id}</div>
+              <div>Rescue Hub: {dispatchResult.nearest_rescue_centre}</div>
+              <div>Uplinks: {dispatchResult.dispatched_channels.join(', ')}</div>
+            </div>
+
+            <div className="p-3 bg-slate-50 dark:bg-slate-900 rounded-xl text-xs space-y-1 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-transparent">
+              <div className="font-semibold text-slate-900 dark:text-slate-100">Survival Protocols:</div>
+              {dispatchResult.instructions_for_crew.map((inst, idx) => (
+                <div key={idx}>• {inst}</div>
+              ))}
+            </div>
+
+            <button
+              onClick={onClose}
+              className="w-full py-3 rounded-xl bg-slate-800 text-slate-200 font-bold text-sm"
+            >
+              CLOSE
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};

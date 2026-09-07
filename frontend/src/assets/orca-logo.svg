@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="orcaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="46" stroke="url(#orcaGrad)" stroke-width="4" fill="#031024" />
+  <path d="M25 55 C 35 30, 65 30, 75 55 C 65 50, 35 50, 25 55 Z" fill="url(#orcaGrad)" />
+  <circle cx="62" cy="45" r="3" fill="#ffffff" />
+</svg>

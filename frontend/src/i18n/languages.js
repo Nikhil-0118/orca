@@ -1,0 +1,27 @@
+export const LANGUAGES = [
+  { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी', region: 'Northern / Central India' },
+  { code: 'en', name: 'English', nativeName: 'English', region: 'Pan-India' },
+  { code: 'ta', name: 'Tamil', nativeName: 'தமிழ்', region: 'Tamil Nadu, Puducherry' },
+  { code: 'te', name: 'Telugu', nativeName: 'తెలుగు', region: 'Andhra Pradesh, Telangana' },
+  { code: 'bn', name: 'Bengali', nativeName: 'বাংলা', region: 'West Bengal, Tripura' },
+  { code: 'mr', name: 'Marathi', nativeName: 'मराठी', region: 'Maharashtra, Goa' },
+  { code: 'gu', name: 'Gujarati', nativeName: 'ગુજરાતી', region: 'Gujarat' },
+  { code: 'kn', name: 'Kannada', nativeName: 'ಕನ್ನಡ', region: 'Karnataka' },
+  { code: 'ml', name: 'Malayalam', nativeName: 'മലയാളം', region: 'Kerala, Lakshadweep' },
+  { code: 'or', name: 'Odia', nativeName: 'ଓଡ଼ିଆ', region: 'Odisha' },
+  { code: 'pa', name: 'Punjabi', nativeName: 'ਪੰਜਾਬੀ', region: 'Punjab, Chandigarh' },
+  { code: 'as', name: 'Assamese', nativeName: 'অসমীয়া', region: 'Assam' },
+  { code: 'ur', name: 'Urdu', nativeName: 'اردو', region: 'Pan-India', dir: 'rtl' },
+  { code: 'kok', name: 'Konkani', nativeName: 'कोंकणी', region: 'Goa, Coastal Karnataka' },
+  { code: 'mai', name: 'Maithili', nativeName: 'मैथिली', region: 'Bihar, Jharkhand' },
+  { code: 'sa', name: 'Sanskrit', nativeName: 'संस्कृतम्', region: 'Classical Language' },
+  { code: 'ne', name: 'Nepali', nativeName: 'नेपाली', region: 'Sikkim, West Bengal' },
+  { code: 'ks', name: 'Kashmiri', nativeName: 'کٲشُر', region: 'Jammu & Kashmir', dir: 'rtl' },
+  { code: 'sd', name: 'Sindhi', nativeName: 'سنڌي', region: 'Gujarat, Maharashtra', dir: 'rtl' },
+  { code: 'doi', name: 'Dogri', nativeName: 'डोगरी', region: 'Jammu & Kashmir' },
+  { code: 'mni', name: 'Manipuri', nativeName: 'মৈতৈলোন্', region: 'Manipur' },
+  { code: 'brx', name: 'Bodo', nativeName: 'बर\'', region: 'Assam' },
+  { code: 'sat', name: 'Santali', nativeName: 'ᱥᱟᱱᱛᱟᱲᱤ', region: 'Jharkhand, Odisha' },
+];
+
+export const DEFAULT_LANGUAGE = 'en';
