@@ -1,0 +1,850 @@
+{
+  "Can I go fishing near Chennai?": {
+    "mode": "marine",
+    "answer": "GO \u2014 Conditions are suitable for fishing.\n\nWinds are manageable and the sea conditions are suitable for normal coastal operations. No major safety warning is currently active.\n\nCurrent conditions:\n\u2022 Wind: 12 knots from the southwest (gentle to moderate breeze)\n\u2022 Sea: Smooth to Slight sea state\n\u2022 Water temperature: About 30\u00b0C\n\u2022 Safety: Clear of monitored maritime boundaries and restricted zones\n\nBest time:\nBest fishing time cannot be predicted reliably from the available data yet.\n\nSafety:\nCheck the latest marine warning before departure. Maintain standard nautical watch.\n\nNote on fish abundance:\nChlorophyll levels can indicate biological productivity, but they do not guarantee where fish will be.\n\nData:\nBased on fresh coastal weather and recent satellite observations.",
+    "location": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "source": "explicit_query",
+      "accuracy_m": null,
+      "timestamp": "2026-09-05T17:36:25.940175+00:00",
+      "is_demo": false,
+      "is_approximate": false,
+      "label": "Chennai, Tamil Nadu",
+      "geographic_type": "coastal",
+      "resolved_place": "Chennai"
+    },
+    "user_location": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "source": "browser_gps",
+      "accuracy_m": null,
+      "timestamp": null,
+      "is_demo": false,
+      "is_approximate": false,
+      "label": "Chennai Corporation, Chennai, Tamil Nadu",
+      "geographic_type": "coastal",
+      "resolved_place": "Chennai Corporation, Chennai"
+    },
+    "query_location": {
+      "name": "Chennai",
+      "source": "explicit_query",
+      "type": "coastal_city",
+      "is_explicit": true,
+      "state": "Tamil Nadu",
+      "coastline_km": null,
+      "bordering_oceans": []
+    },
+    "decision": {
+      "label": "GO",
+      "summary": "Conditions are suitable for fishing.",
+      "confidence": "high"
+    },
+    "risk_level": "moderate",
+    "risk_summary": "Operational conditions evaluated as MODERATE risk by OCEAN agent.",
+    "key_conditions": [
+      "Sea surface temperature: ~29.99\u00b0C",
+      "Surface wind: SW moderate ~12.0 knots",
+      "Sea state: Smooth to Slight",
+      "Visibility: ~8.0 km (Good)"
+    ],
+    "recommendations": [
+      "Maintain standard watch and navigational safety procedures.",
+      "Maintain continuous nautical watch and secure loose gear.",
+      "Small craft should avoid operating far offshore in open waters.",
+      "Check latest IMD coastal weather bulletins before departure."
+    ],
+    "best_time": {
+      "available": false,
+      "window": null,
+      "basis": "A reliable timing window cannot be recommended because ORCA does not currently have a verified future forecast for this period. Current observations indicate operational caution."
+    },
+    "reasoning_summary": "Why: Marine weather, sea state, and boundary proximity are all within safe operational thresholds.",
+    "evidence": [
+      "Ocean state data: INCOIS ERDDAP (live, VERY_STALE)",
+      "Weather data: IMD-mock (mock - IMD_API_KEY not configured)",
+      "Safety assessment: Multi-agent risk evaluation (score: 0/100) using [DEMO BOUNDARY] sample (approximate; not for navigation)"
+    ],
+    "structured_evidence": [
+      {
+        "source": "Ocean Agent",
+        "summary": "Ocean state data: SST ~29.99\u00b0C, surface wind ~8.02 m/s (INCOIS ERDDAP, 2023-05-21T12:00:00Z)"
+      },
+      {
+        "source": "Weather Agent",
+        "summary": "Wind SW moderate ~12.0 kt, visibility 8.0 km (Good), sea condition Smooth to Slight"
+      },
+      {
+        "source": "Safety Agent",
+        "summary": "Safety status: Inside, distance to boundary segment ~288.27 km (risk: low)"
+      }
+    ],
+    "data_limitations": [
+      "Weather bulletin is currently based on a simulated/demo feed.",
+      "Maritime boundary coordinates use an approximate demonstration boundary dataset (NOT FOR NAVIGATION)."
+    ],
+    "agents_used": [
+      "Ocean",
+      "Weather",
+      "Safety"
+    ],
+    "evidence_summary": {
+      "evidence_count": 3,
+      "agents_used": [
+        "Ocean",
+        "Weather",
+        "Safety"
+      ],
+      "overall_reliability": "LOW",
+      "freshness_breakdown": {
+        "sea_surface_temperature": "VERY_STALE",
+        "wind_speed": "VERY_STALE",
+        "boundary_proximity": "FRESH"
+      },
+      "stale_parameters": [
+        "sea_surface_temperature",
+        "wind_speed"
+      ],
+      "missing_parameters": [
+        "chlorophyll_a",
+        "significant_wave_height"
+      ],
+      "conflicts_detected": false
+    },
+    "source_reliability": {
+      "overall": "LOW"
+    },
+    "data_quality": {
+      "freshness_breakdown": {
+        "sea_surface_temperature": "VERY_STALE",
+        "wind_speed": "VERY_STALE",
+        "boundary_proximity": "FRESH"
+      },
+      "stale_parameters": [
+        "sea_surface_temperature",
+        "wind_speed"
+      ],
+      "missing_parameters": [
+        "chlorophyll_a",
+        "significant_wave_height"
+      ],
+      "overall_reliability": "LOW",
+      "spatial_distance_notes": [
+        "boundary_proximity grid observation is ~288.27 km from requested coordinates."
+      ],
+      "location_provided": true
+    },
+    "conflicts": [],
+    "human_response": {
+      "direct_answer": "GO \u2014 Conditions are suitable for fishing.",
+      "decision_code": "GO",
+      "explanation": "Winds are manageable and the sea conditions are suitable for normal coastal operations. No major safety warning is currently active.",
+      "best_time": "Best fishing time cannot be predicted reliably from the available data yet.",
+      "conditions": {
+        "wind": "12 knots from the southwest (gentle to moderate breeze)",
+        "sea_state": "Smooth to Slight sea state",
+        "water_temperature": "About 30\u00b0C",
+        "visibility": "Clear (~8.0 km (Good))",
+        "safety": "Clear of monitored maritime boundaries and restricted zones"
+      },
+      "safety_notice": "Check the latest marine warning before departure. Maintain standard nautical watch.",
+      "data_quality_note": "Based on fresh coastal weather and recent satellite observations.",
+      "sources": [
+        "IMD Weather",
+        "INCOIS Ocean Data",
+        "Safety / Boundary Monitoring"
+      ]
+    }
+  },
+  "When should I go fishing near Chennai?": {
+    "mode": "marine",
+    "answer": "INSUFFICIENT DATA \u2014 ORCA cannot reliably determine the best future fishing time from the available data yet.\n\nVerified future hourly forecast data is currently unavailable for this area to predict an optimal departure window. Current conditions can be evaluated, but future timing cannot be guaranteed without active hourly forecasts.\n\nCurrent conditions:\n\u2022 Wind: 12 knots from the southwest (gentle to moderate breeze)\n\u2022 Sea: Smooth to Slight sea state\n\u2022 Water temperature: About 30\u00b0C\n\u2022 Safety: Clear of monitored maritime boundaries and restricted zones\n\nBest time:\nA reliable fishing time cannot be predicted reliably from the available data yet.\n\nSafety:\nCheck the latest marine weather warning before departure. Maintain standard nautical watch.\n\nNote on fish abundance:\nChlorophyll levels can indicate biological productivity, but they do not guarantee where fish will be.\n\nData:\nBased on fresh coastal weather and recent satellite observations.",
+    "location": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "source": "explicit_query",
+      "accuracy_m": null,
+      "timestamp": "2026-09-05T17:36:28.260435+00:00",
+      "is_demo": false,
+      "is_approximate": false,
+      "label": "Chennai, Tamil Nadu",
+      "geographic_type": "coastal",
+      "resolved_place": "Chennai"
+    },
+    "user_location": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "source": "browser_gps",
+      "accuracy_m": null,
+      "timestamp": null,
+      "is_demo": false,
+      "is_approximate": false,
+      "label": "Chennai Corporation, Chennai, Tamil Nadu",
+      "geographic_type": "coastal",
+      "resolved_place": "Chennai Corporation, Chennai"
+    },
+    "query_location": {
+      "name": "Chennai",
+      "source": "explicit_query",
+      "type": "coastal_city",
+      "is_explicit": true,
+      "state": "Tamil Nadu",
+      "coastline_km": null,
+      "bordering_oceans": []
+    },
+    "decision": {
+      "label": "INSUFFICIENT_DATA",
+      "summary": "ORCA cannot reliably determine the best future fishing time from the available data yet.",
+      "confidence": "high"
+    },
+    "risk_level": "moderate",
+    "risk_summary": "Operational conditions evaluated as MODERATE risk by OCEAN agent.",
+    "key_conditions": [
+      "Sea surface temperature: ~29.99\u00b0C",
+      "Surface wind: SW moderate ~12.0 knots",
+      "Sea state: Smooth to Slight",
+      "Visibility: ~8.0 km (Good)"
+    ],
+    "recommendations": [
+      "Maintain standard watch and navigational safety procedures.",
+      "Maintain continuous nautical watch and secure loose gear.",
+      "Small craft should avoid operating far offshore in open waters.",
+      "Check latest IMD coastal weather bulletins before departure."
+    ],
+    "best_time": {
+      "available": false,
+      "window": null,
+      "basis": "A reliable timing window cannot be recommended because ORCA does not currently have a verified future forecast for this period. Current observations indicate operational caution."
+    },
+    "reasoning_summary": "Why: Marine weather, sea state, and boundary proximity are all within safe operational thresholds.",
+    "evidence": [
+      "Ocean state data: INCOIS ERDDAP (live, VERY_STALE)",
+      "Weather data: IMD-mock (mock - IMD_API_KEY not configured)",
+      "Safety assessment: Multi-agent risk evaluation (score: 0/100) using [DEMO BOUNDARY] sample (approximate; not for navigation)"
+    ],
+    "structured_evidence": [
+      {
+        "source": "Ocean Agent",
+        "summary": "Ocean state data: SST ~29.99\u00b0C, surface wind ~8.02 m/s (INCOIS ERDDAP, 2023-05-21T12:00:00Z)"
+      },
+      {
+        "source": "Weather Agent",
+        "summary": "Wind SW moderate ~12.0 kt, visibility 8.0 km (Good), sea condition Smooth to Slight"
+      },
+      {
+        "source": "Safety Agent",
+        "summary": "Safety status: Inside, distance to boundary segment ~288.27 km (risk: low)"
+      }
+    ],
+    "data_limitations": [
+      "Weather bulletin is currently based on a simulated/demo feed.",
+      "Maritime boundary coordinates use an approximate demonstration boundary dataset (NOT FOR NAVIGATION)."
+    ],
+    "agents_used": [
+      "Ocean",
+      "Weather",
+      "Safety"
+    ],
+    "evidence_summary": {
+      "evidence_count": 3,
+      "agents_used": [
+        "Ocean",
+        "Weather",
+        "Safety"
+      ],
+      "overall_reliability": "LOW",
+      "freshness_breakdown": {
+        "sea_surface_temperature": "VERY_STALE",
+        "wind_speed": "VERY_STALE",
+        "boundary_proximity": "FRESH"
+      },
+      "stale_parameters": [
+        "sea_surface_temperature",
+        "wind_speed"
+      ],
+      "missing_parameters": [
+        "chlorophyll_a",
+        "significant_wave_height"
+      ],
+      "conflicts_detected": false
+    },
+    "source_reliability": {
+      "overall": "LOW"
+    },
+    "data_quality": {
+      "freshness_breakdown": {
+        "sea_surface_temperature": "VERY_STALE",
+        "wind_speed": "VERY_STALE",
+        "boundary_proximity": "FRESH"
+      },
+      "stale_parameters": [
+        "sea_surface_temperature",
+        "wind_speed"
+      ],
+      "missing_parameters": [
+        "chlorophyll_a",
+        "significant_wave_height"
+      ],
+      "overall_reliability": "LOW",
+      "spatial_distance_notes": [
+        "boundary_proximity grid observation is ~288.27 km from requested coordinates."
+      ],
+      "location_provided": true
+    },
+    "conflicts": [],
+    "human_response": {
+      "direct_answer": "INSUFFICIENT DATA \u2014 ORCA cannot reliably determine the best future fishing time from the available data yet.",
+      "decision_code": "INSUFFICIENT_DATA",
+      "explanation": "Verified future hourly forecast data is currently unavailable for this area to predict an optimal departure window. Current conditions can be evaluated, but future timing cannot be guaranteed without active hourly forecasts.",
+      "best_time": "A reliable fishing time cannot be predicted reliably from the available data yet.",
+      "conditions": {
+        "wind": "12 knots from the southwest (gentle to moderate breeze)",
+        "sea_state": "Smooth to Slight sea state",
+        "water_temperature": "About 30\u00b0C",
+        "visibility": "Clear (~8.0 km (Good))",
+        "safety": "Clear of monitored maritime boundaries and restricted zones"
+      },
+      "safety_notice": "Check the latest marine weather warning before departure. Maintain standard nautical watch.",
+      "data_quality_note": "Based on fresh coastal weather and recent satellite observations.",
+      "sources": [
+        "IMD Weather",
+        "INCOIS Ocean Data",
+        "Safety / Boundary Monitoring"
+      ]
+    }
+  },
+  "What is the chlorophyll concentration near Chennai?": {
+    "mode": "marine",
+    "answer": "Chlorophyll concentration in this area is approximately 0.0882 based on the nearest available observation.\n\nDerived from ISRO MOSDAC satellite ocean color observations. Observed on 2026-09-04. Chlorophyll indicates biological productivity and phytoplankton growth in coastal waters.\n\nNote: Chlorophyll indicates primary biological productivity, but does not guarantee fish presence.\n\nData note: Based on fresh coastal weather and recent satellite observations.",
+    "location": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "source": "explicit_query",
+      "accuracy_m": null,
+      "timestamp": "2026-09-05T17:36:29.929466+00:00",
+      "is_demo": false,
+      "is_approximate": false,
+      "label": "Chennai, Tamil Nadu",
+      "geographic_type": "coastal",
+      "resolved_place": "Chennai"
+    },
+    "user_location": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "source": "browser_gps",
+      "accuracy_m": null,
+      "timestamp": null,
+      "is_demo": false,
+      "is_approximate": false,
+      "label": "Chennai Corporation, Chennai, Tamil Nadu",
+      "geographic_type": "coastal",
+      "resolved_place": "Chennai Corporation, Chennai"
+    },
+    "query_location": {
+      "name": "Chennai",
+      "source": "explicit_query",
+      "type": "coastal_city",
+      "is_explicit": true,
+      "state": "Tamil Nadu",
+      "coastline_km": null,
+      "bordering_oceans": []
+    },
+    "decision": null,
+    "risk_level": "low",
+    "risk_summary": "Operational conditions evaluated as LOW risk by EO agent.",
+    "key_conditions": [
+      "Chlorophyll-A (MOSDAC): 0.0882",
+      "MOSDAC Grid: 13.012\u00b0 N, 80.25\u00b0 E (Observed: 2026-09-04)",
+      "Sea state: Moderate",
+      "Visibility: ~Good (~8 km)"
+    ],
+    "recommendations": [
+      "Maintain standard nautical watch and navigational safety procedures.",
+      "Verify onboard communications equipment before departure."
+    ],
+    "best_time": {
+      "available": false,
+      "window": null,
+      "basis": "A reliable timing window cannot be recommended because ORCA does not currently have a verified future forecast for this period. Current observations indicate operational caution."
+    },
+    "reasoning_summary": "Why: Operational risk is driven by Eo agent observations indicating low conditions. Small craft should plan voyages accordingly.",
+    "evidence": [
+      "EO satellite data: MOSDAC (chlorophyll_a, value: 0.0882, RECENT)"
+    ],
+    "structured_evidence": [
+      {
+        "source": "Satellite EO Agent (MOSDAC - remote authenticated)",
+        "summary": "MOSDAC Chlorophyll-A: 0.0882 (unit not specified) at nearest grid (13.012\u00b0, 80.25\u00b0) ~8.18 km away (observed 2026-09-04, RECENT, remote authenticated)"
+      }
+    ],
+    "data_limitations": [
+      "Chlorophyll-A observation was acquired via official authenticated MOSDAC NetCDF dataset ingestion.",
+      "Unit metadata is not explicitly provided in the MOSDAC NetCDF variable attributes."
+    ],
+    "agents_used": [
+      "Satellite"
+    ],
+    "evidence_summary": {
+      "evidence_count": 1,
+      "agents_used": [
+        "Satellite"
+      ],
+      "overall_reliability": "LOW",
+      "freshness_breakdown": {
+        "chlorophyll_a": "RECENT"
+      },
+      "stale_parameters": [],
+      "missing_parameters": [
+        "sea_surface_temperature",
+        "wind_speed",
+        "significant_wave_height",
+        "boundary_proximity"
+      ],
+      "conflicts_detected": false
+    },
+    "source_reliability": {
+      "overall": "LOW"
+    },
+    "data_quality": {
+      "freshness_breakdown": {
+        "chlorophyll_a": "RECENT"
+      },
+      "stale_parameters": [],
+      "missing_parameters": [
+        "sea_surface_temperature",
+        "wind_speed",
+        "significant_wave_height",
+        "boundary_proximity"
+      ],
+      "overall_reliability": "LOW",
+      "spatial_distance_notes": [],
+      "location_provided": true
+    },
+    "conflicts": [],
+    "human_response": {
+      "direct_answer": "Chlorophyll concentration in this area is approximately 0.0882 based on the nearest available observation.",
+      "decision_code": null,
+      "explanation": "Derived from ISRO MOSDAC satellite ocean color observations. Observed on 2026-09-04. Chlorophyll indicates biological productivity and phytoplankton growth in coastal waters.",
+      "best_time": null,
+      "conditions": null,
+      "safety_notice": null,
+      "data_quality_note": "Based on fresh coastal weather and recent satellite observations.",
+      "sources": [
+        "ISRO Satellite Data"
+      ]
+    }
+  },
+  "Will I get more fish near Chennai?": {
+    "mode": "marine",
+    "answer": "Fish abundance cannot be confirmed from the current data alone.\n\nChlorophyll levels can indicate biological productivity, but they do not guarantee where fish will be. Fish movement also depends on changing water currents, water temperature gradients, and seasonal migration patterns.\n\nSatellite chlorophyll readings are at typical regional levels. Surface conditions can support marine life, but fish catch cannot be guaranteed from weather alone.\n\nCurrent sea conditions:\n\u2022 Wind: 12 knots from the southwest (gentle to moderate breeze)\n\u2022 Sea: Smooth to Slight sea state\n\u2022 Safety: Clear of monitored maritime boundaries and restricted zones",
+    "location": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "source": "explicit_query",
+      "accuracy_m": null,
+      "timestamp": "2026-09-05T17:36:42.199766+00:00",
+      "is_demo": false,
+      "is_approximate": false,
+      "label": "Chennai, Tamil Nadu",
+      "geographic_type": "coastal",
+      "resolved_place": "Chennai"
+    },
+    "user_location": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "source": "browser_gps",
+      "accuracy_m": null,
+      "timestamp": null,
+      "is_demo": false,
+      "is_approximate": false,
+      "label": "Chennai Corporation, Chennai, Tamil Nadu",
+      "geographic_type": "coastal",
+      "resolved_place": "Chennai Corporation, Chennai"
+    },
+    "query_location": {
+      "name": "Chennai",
+      "source": "explicit_query",
+      "type": "coastal_city",
+      "is_explicit": true,
+      "state": "Tamil Nadu",
+      "coastline_km": null,
+      "bordering_oceans": []
+    },
+    "decision": null,
+    "risk_level": "moderate",
+    "risk_summary": "Operational conditions evaluated as MODERATE risk by OCEAN agent.",
+    "key_conditions": [
+      "Sea surface temperature: ~29.99\u00b0C",
+      "Surface wind: SW moderate ~12.0 knots",
+      "Sea state: Smooth to Slight",
+      "Visibility: ~8.0 km (Good)"
+    ],
+    "recommendations": [
+      "Maintain standard watch and navigational safety procedures.",
+      "Maintain continuous nautical watch and secure loose gear.",
+      "Small craft should avoid operating far offshore in open waters.",
+      "Check latest IMD coastal weather bulletins before departure."
+    ],
+    "best_time": {
+      "available": false,
+      "window": null,
+      "basis": "A reliable timing window cannot be recommended because ORCA does not currently have a verified future forecast for this period. Current observations indicate operational caution."
+    },
+    "reasoning_summary": "Why: Marine weather, sea state, and boundary proximity are all within safe operational thresholds.",
+    "evidence": [
+      "Ocean state data: INCOIS ERDDAP (live, VERY_STALE)",
+      "Weather data: IMD-mock (mock - IMD_API_KEY not configured)",
+      "Safety assessment: Multi-agent risk evaluation (score: 0/100) using [DEMO BOUNDARY] sample (approximate; not for navigation)"
+    ],
+    "structured_evidence": [
+      {
+        "source": "Ocean Agent",
+        "summary": "Ocean state data: SST ~29.99\u00b0C, surface wind ~8.02 m/s (INCOIS ERDDAP, 2023-05-21T12:00:00Z)"
+      },
+      {
+        "source": "Weather Agent",
+        "summary": "Wind SW moderate ~12.0 kt, visibility 8.0 km (Good), sea condition Smooth to Slight"
+      },
+      {
+        "source": "Safety Agent",
+        "summary": "Safety status: Inside, distance to boundary segment ~288.27 km (risk: low)"
+      }
+    ],
+    "data_limitations": [
+      "Weather bulletin is currently based on a simulated/demo feed.",
+      "Maritime boundary coordinates use an approximate demonstration boundary dataset (NOT FOR NAVIGATION)."
+    ],
+    "agents_used": [
+      "Ocean",
+      "Weather",
+      "Safety"
+    ],
+    "evidence_summary": {
+      "evidence_count": 3,
+      "agents_used": [
+        "Ocean",
+        "Weather",
+        "Safety"
+      ],
+      "overall_reliability": "LOW",
+      "freshness_breakdown": {
+        "sea_surface_temperature": "VERY_STALE",
+        "wind_speed": "VERY_STALE",
+        "boundary_proximity": "FRESH"
+      },
+      "stale_parameters": [
+        "sea_surface_temperature",
+        "wind_speed"
+      ],
+      "missing_parameters": [
+        "chlorophyll_a",
+        "significant_wave_height"
+      ],
+      "conflicts_detected": false
+    },
+    "source_reliability": {
+      "overall": "LOW"
+    },
+    "data_quality": {
+      "freshness_breakdown": {
+        "sea_surface_temperature": "VERY_STALE",
+        "wind_speed": "VERY_STALE",
+        "boundary_proximity": "FRESH"
+      },
+      "stale_parameters": [
+        "sea_surface_temperature",
+        "wind_speed"
+      ],
+      "missing_parameters": [
+        "chlorophyll_a",
+        "significant_wave_height"
+      ],
+      "overall_reliability": "LOW",
+      "spatial_distance_notes": [
+        "boundary_proximity grid observation is ~288.27 km from requested coordinates."
+      ],
+      "location_provided": true
+    },
+    "conflicts": [],
+    "human_response": {
+      "direct_answer": "Fish abundance cannot be confirmed from the current data alone.",
+      "decision_code": null,
+      "explanation": "Chlorophyll levels can indicate biological productivity, but they do not guarantee where fish will be. Fish movement also depends on changing water currents, water temperature gradients, and seasonal migration patterns.",
+      "best_time": null,
+      "conditions": {
+        "wind": "12 knots from the southwest (gentle to moderate breeze)",
+        "sea_state": "Smooth to Slight sea state",
+        "water_temperature": "About 30\u00b0C",
+        "visibility": "Clear (~8.0 km (Good))",
+        "safety": "Clear of monitored maritime boundaries and restricted zones"
+      },
+      "safety_notice": "Never navigate into hazardous waters or border areas chasing fish.",
+      "data_quality_note": "Based on fresh coastal weather and recent satellite observations.",
+      "sources": [
+        "IMD Weather",
+        "INCOIS Ocean Data",
+        "Safety / Boundary Monitoring"
+      ]
+    }
+  },
+  "What is the weather near Chennai?": {
+    "mode": "marine",
+    "answer": "Coastal weather is currently smooth to slight with winds around 12 knots from the southwest.\n\nNo severe weather or storm warnings are currently active. Visibility is good.\n\nCurrent conditions:\n\u2022 Wind: 12 knots from the southwest (gentle to moderate breeze)\n\u2022 Sea: Smooth to Slight sea state\n\u2022 Visibility: Clear (~8.0 km (Good))",
+    "location": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "source": "explicit_query",
+      "accuracy_m": null,
+      "timestamp": "2026-09-05T17:36:43.581374+00:00",
+      "is_demo": false,
+      "is_approximate": false,
+      "label": "Chennai, Tamil Nadu",
+      "geographic_type": "coastal",
+      "resolved_place": "Chennai"
+    },
+    "user_location": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "source": "browser_gps",
+      "accuracy_m": null,
+      "timestamp": null,
+      "is_demo": false,
+      "is_approximate": false,
+      "label": "Chennai Corporation, Chennai, Tamil Nadu",
+      "geographic_type": "coastal",
+      "resolved_place": "Chennai Corporation, Chennai"
+    },
+    "query_location": {
+      "name": "Chennai",
+      "source": "explicit_query",
+      "type": "coastal_city",
+      "is_explicit": true,
+      "state": "Tamil Nadu",
+      "coastline_km": null,
+      "bordering_oceans": []
+    },
+    "decision": null,
+    "risk_level": "low",
+    "risk_summary": "Operational conditions evaluated as LOW risk by WEATHER agent.",
+    "key_conditions": [
+      "Surface wind: SW moderate ~12.0 knots",
+      "Sea state: Smooth to Slight",
+      "Visibility: ~8.0 km (Good)"
+    ],
+    "recommendations": [
+      "Maintain standard nautical watch and navigational safety procedures.",
+      "Verify onboard communications equipment before departure."
+    ],
+    "best_time": {
+      "available": false,
+      "window": null,
+      "basis": "A reliable timing window cannot be recommended because ORCA does not currently have a verified future forecast for this period. Current observations indicate operational caution."
+    },
+    "reasoning_summary": "Why: Operational risk is driven by Weather agent observations indicating low conditions. Small craft should plan voyages accordingly.",
+    "evidence": [
+      "Weather data: IMD-mock (mock - IMD_API_KEY not configured)"
+    ],
+    "structured_evidence": [
+      {
+        "source": "Weather Agent",
+        "summary": "Wind SW moderate ~12.0 kt, visibility 8.0 km (Good), sea condition Smooth to Slight"
+      }
+    ],
+    "data_limitations": [
+      "Weather bulletin is currently based on a simulated/demo feed."
+    ],
+    "agents_used": [
+      "Weather"
+    ],
+    "evidence_summary": {
+      "evidence_count": 1,
+      "agents_used": [
+        "Weather"
+      ],
+      "overall_reliability": "LOW",
+      "freshness_breakdown": {
+        "wind_speed": "VERY_STALE"
+      },
+      "stale_parameters": [
+        "wind_speed"
+      ],
+      "missing_parameters": [
+        "chlorophyll_a",
+        "sea_surface_temperature",
+        "significant_wave_height",
+        "boundary_proximity"
+      ],
+      "conflicts_detected": false
+    },
+    "source_reliability": {
+      "overall": "LOW"
+    },
+    "data_quality": {
+      "freshness_breakdown": {
+        "wind_speed": "VERY_STALE"
+      },
+      "stale_parameters": [
+        "wind_speed"
+      ],
+      "missing_parameters": [
+        "chlorophyll_a",
+        "sea_surface_temperature",
+        "significant_wave_height",
+        "boundary_proximity"
+      ],
+      "overall_reliability": "LOW",
+      "spatial_distance_notes": [],
+      "location_provided": true
+    },
+    "conflicts": [],
+    "human_response": {
+      "direct_answer": "Coastal weather is currently smooth to slight with winds around 12 knots from the southwest.",
+      "decision_code": null,
+      "explanation": "No severe weather or storm warnings are currently active. Visibility is good.",
+      "best_time": null,
+      "conditions": {
+        "wind": "12 knots from the southwest (gentle to moderate breeze)",
+        "sea_state": "Smooth to Slight sea state",
+        "water_temperature": "Warm coastal waters",
+        "visibility": "Clear (~8.0 km (Good))",
+        "safety": "Clear of monitored maritime boundaries and restricted zones"
+      },
+      "safety_notice": "Always verify latest port weather bulletins before sailing.",
+      "data_quality_note": null,
+      "sources": [
+        "IMD Weather"
+      ]
+    }
+  },
+  "Is it safe near Chennai?": {
+    "mode": "safety",
+    "answer": "GO \u2014 Navigational safety conditions are currently clear in this area.\n\nNo active maritime boundary alerts or security restrictions are present. The nearest boundary line is over 288.27 km away.\n\nSafety summary:\n\u2022 Boundary: Clear of monitored maritime boundaries and restricted zones\n\u2022 Sea: Moderate sea state\n\u2022 Wind: Wind telemetry unavailable",
+    "location": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "source": "explicit_query",
+      "accuracy_m": null,
+      "timestamp": "2026-09-05T17:36:45.263155+00:00",
+      "is_demo": false,
+      "is_approximate": false,
+      "label": "Chennai, Tamil Nadu",
+      "geographic_type": "coastal",
+      "resolved_place": "Chennai"
+    },
+    "user_location": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "source": "browser_gps",
+      "accuracy_m": null,
+      "timestamp": null,
+      "is_demo": false,
+      "is_approximate": false,
+      "label": "Chennai Corporation, Chennai, Tamil Nadu",
+      "geographic_type": "coastal",
+      "resolved_place": "Chennai Corporation, Chennai"
+    },
+    "query_location": {
+      "name": "Chennai",
+      "source": "explicit_query",
+      "type": "coastal_city",
+      "is_explicit": true,
+      "state": "Tamil Nadu",
+      "coastline_km": null,
+      "bordering_oceans": []
+    },
+    "decision": {
+      "label": "GO",
+      "summary": "Navigational safety conditions are currently clear in this area.",
+      "confidence": "high"
+    },
+    "risk_level": "low",
+    "risk_summary": "Operational conditions evaluated as LOW risk by SAFETY agent.",
+    "key_conditions": [
+      "Sea state: Moderate",
+      "Visibility: ~Good (~8 km)"
+    ],
+    "recommendations": [
+      "Maintain standard watch and navigational safety procedures.",
+      "Maintain standard nautical watch and navigational safety procedures.",
+      "Verify onboard communications equipment before departure."
+    ],
+    "best_time": {
+      "available": false,
+      "window": null,
+      "basis": "A reliable timing window cannot be recommended because ORCA does not currently have a verified future forecast for this period. Current observations indicate operational caution."
+    },
+    "reasoning_summary": "Why: Marine weather, sea state, and boundary proximity are all within safe operational thresholds.",
+    "evidence": [
+      "Safety assessment: Multi-agent risk evaluation (score: 0/100) using [DEMO BOUNDARY] sample (approximate; not for navigation)"
+    ],
+    "structured_evidence": [
+      {
+        "source": "Safety Agent",
+        "summary": "Safety status: Inside, distance to boundary segment ~288.27 km (risk: low)"
+      }
+    ],
+    "data_limitations": [
+      "Maritime boundary coordinates use an approximate demonstration boundary dataset (NOT FOR NAVIGATION)."
+    ],
+    "agents_used": [
+      "Safety"
+    ],
+    "evidence_summary": {
+      "evidence_count": 1,
+      "agents_used": [
+        "Safety"
+      ],
+      "overall_reliability": "LOW",
+      "freshness_breakdown": {
+        "boundary_proximity": "FRESH"
+      },
+      "stale_parameters": [],
+      "missing_parameters": [
+        "chlorophyll_a",
+        "sea_surface_temperature",
+        "wind_speed",
+        "significant_wave_height"
+      ],
+      "conflicts_detected": false
+    },
+    "source_reliability": {
+      "overall": "LOW"
+    },
+    "data_quality": {
+      "freshness_breakdown": {
+        "boundary_proximity": "FRESH"
+      },
+      "stale_parameters": [],
+      "missing_parameters": [
+        "chlorophyll_a",
+        "sea_surface_temperature",
+        "wind_speed",
+        "significant_wave_height"
+      ],
+      "overall_reliability": "LOW",
+      "spatial_distance_notes": [
+        "boundary_proximity grid observation is ~288.27 km from requested coordinates."
+      ],
+      "location_provided": true
+    },
+    "conflicts": [],
+    "human_response": {
+      "direct_answer": "GO \u2014 Navigational safety conditions are currently clear in this area.",
+      "decision_code": "GO",
+      "explanation": "No active maritime boundary alerts or security restrictions are present. The nearest boundary line is over 288.27 km away.",
+      "best_time": null,
+      "conditions": {
+        "wind": "Wind telemetry unavailable",
+        "sea_state": "Moderate sea state",
+        "water_temperature": "Warm coastal waters",
+        "visibility": "Clear (~8.0 km)",
+        "safety": "Clear of monitored maritime boundaries and restricted zones"
+      },
+      "safety_notice": "Maintain standard watch and navigational safety procedures.",
+      "data_quality_note": null,
+      "sources": [
+        "Safety / Boundary Monitoring"
+      ]
+    }
+  }
+}

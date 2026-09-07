@@ -1,0 +1,120 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\admin\Desktop\ORCAA\orca\backend
+configfile: pyproject.toml
+plugins: anyio-4.14.2, langsmith-0.12.0, asyncio-1.4.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 6 items
+
+tests\services\test_mosdac_service.py FFFF..                             [100%]
+
+================================== FAILURES ===================================
+_________________________ test_mosdac_service_mumbai __________________________
+
+mosdac_svc = <app.services.mosdac_service.MosdacService object at 0x0000015F45F8AE90>
+
+    def test_mosdac_service_mumbai(mosdac_svc):
+        """Test 1: Mumbai (19.0760, 72.8777)."""
+        res = mosdac_svc.get_chlorophyll(19.0760, 72.8777)
+        assert res["status"] == "success"
+        assert res["source"] == "MOSDAC"
+        assert res["parameter"] == "chlorophyll_a"
+        assert res["requested_latitude"] == 19.0760
+        assert res["requested_longitude"] == 72.8777
+        assert res["normalized_longitude"] == 72.8777
+        assert res["grid_latitude"] == 19.016
+        assert res["grid_longitude"] == 73.0
+        assert res["value"] == 0.0000  # Land mask
+        assert res["unit"] is None
+        assert "Unit metadata not explicitly provided" in res["unit_notes"]
+>       assert res["observation_date"] == "2026-09-03"
+E       AssertionError: assert '2026-09-04' == '2026-09-03'
+E         
+E         - 2026-09-03
+E         ?          ^
+E         + 2026-09-04
+E         ?          ^
+
+tests\services\test_mosdac_service.py:31: AssertionError
+_________________________ test_mosdac_service_chennai _________________________
+
+mosdac_svc = <app.services.mosdac_service.MosdacService object at 0x0000015F45F8AE90>
+
+    def test_mosdac_service_chennai(mosdac_svc):
+        """Test 2: Chennai (13.0827, 80.2707)."""
+        res = mosdac_svc.get_chlorophyll(13.0827, 80.2707)
+        assert res["status"] == "success"
+        assert res["source"] == "MOSDAC"
+        assert res["parameter"] == "chlorophyll_a"
+        assert res["requested_latitude"] == 13.0827
+        assert res["requested_longitude"] == 80.2707
+        assert res["grid_latitude"] == 13.012
+        assert res["grid_longitude"] == 80.25
+>       assert res["value"] == 0.0885
+E       assert 0.0882 == 0.0885
+
+tests\services\test_mosdac_service.py:45: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  orca.services.mosdac_downloader:mosdac_downloader.py:424 mosdac_authenticated_download_failed_fallback_activated
+_________________________ test_mosdac_service_kolkata _________________________
+
+mosdac_svc = <app.services.mosdac_service.MosdacService object at 0x0000015F45F8AE90>
+
+    def test_mosdac_service_kolkata(mosdac_svc):
+        """Test 3: Kolkata (22.5726, 88.3639)."""
+        res = mosdac_svc.get_chlorophyll(22.5726, 88.3639)
+        assert res["status"] == "success"
+        assert res["grid_latitude"] == 22.522
+        assert res["grid_longitude"] == 88.25
+        assert res["value"] == 0.0000  # Inland land mask
+>       assert res["observation_date"] == "2026-09-03"
+E       AssertionError: assert '2026-09-04' == '2026-09-03'
+E         
+E         - 2026-09-03
+E         ?          ^
+E         + 2026-09-04
+E         ?          ^
+
+tests\services\test_mosdac_service.py:57: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  orca.services.mosdac_downloader:mosdac_downloader.py:424 mosdac_authenticated_download_failed_fallback_activated
+___________________ test_mosdac_service_negative_longitude ____________________
+
+mosdac_svc = <app.services.mosdac_service.MosdacService object at 0x0000015F45F8AE90>
+
+    def test_mosdac_service_negative_longitude(mosdac_svc):
+        """Test 4: Negative longitude (25.0, -70.0 -> 290.0)."""
+        res = mosdac_svc.get_chlorophyll(25.0000, -70.0000)
+        assert res["status"] == "success"
+        assert res["requested_latitude"] == 25.0
+        assert res["requested_longitude"] == -70.0
+        assert res["normalized_longitude"] == 290.0
+        assert res["grid_latitude"] == 25.038
+        assert res["grid_longitude"] == 290.0
+        assert res["value"] == 0.0343
+>       assert res["observation_date"] == "2026-09-03"
+E       AssertionError: assert '2026-09-04' == '2026-09-03'
+E         
+E         - 2026-09-03
+E         ?          ^
+E         + 2026-09-04
+E         ?          ^
+
+tests\services\test_mosdac_service.py:71: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  orca.services.mosdac_downloader:mosdac_downloader.py:424 mosdac_authenticated_download_failed_fallback_activated
+============================== warnings summary ===============================
+..\..\..\..\AppData\Local\Programs\Python\Python314\Lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py:128
+  C:\Users\admin\AppData\Local\Programs\Python\Python314\Lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py:128: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(f):
+
+tests/services/test_mosdac_service.py::test_mosdac_service_mumbai
+  <frozen importlib._bootstrap>:491: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 16 from C header, got 96 from PyObject
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/services/test_mosdac_service.py::test_mosdac_service_mumbai - As...
+FAILED tests/services/test_mosdac_service.py::test_mosdac_service_chennai - a...
+FAILED tests/services/test_mosdac_service.py::test_mosdac_service_kolkata - A...
+FAILED tests/services/test_mosdac_service.py::test_mosdac_service_negative_longitude
+================== 4 failed, 2 passed, 2 warnings in 11.87s ===================

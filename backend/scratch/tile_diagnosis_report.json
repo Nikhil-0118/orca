@@ -1,0 +1,19 @@
+{
+  "compactTiles": {
+    "containerBackground": null,
+    "tilesCount": 0,
+    "tiles": []
+  },
+  "expandedInitial": {
+    "containerBackground": null,
+    "tilesCount": 0,
+    "tiles": []
+  },
+  "expandedZoomed": {
+    "containerBackground": null,
+    "mapPaneTransform": null,
+    "tilePaneTransform": null,
+    "tilesCount": 0,
+    "tiles": []
+  }
+}

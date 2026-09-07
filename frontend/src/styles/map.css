@@ -1,0 +1,44 @@
+/* Geospatial Layer Visual Styles */
+.map-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #020914;
+}
+
+.pfz-zone-polygon {
+  fill: #10b981;
+  fill-opacity: 0.25;
+  stroke: #10b981;
+  stroke-width: 2px;
+  stroke-dasharray: 4, 4;
+}
+
+.danger-zone-polygon {
+  fill: #ef4444;
+  fill-opacity: 0.35;
+  stroke: #ef4444;
+  stroke-width: 2.5px;
+}
+
+.vessel-marker-pulse {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #00f2fe;
+  box-shadow: 0 0 0 rgba(0, 242, 254, 0.6);
+  animation: pulse-ring 1.8s infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(0, 242, 254, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 242, 254, 0);
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "name": "Demo IMBL Boundary Sample",
+    "status": "DEMO ONLY / APPROXIMATE / NOT FOR NAVIGATION",
+    "warning": "Approximate demo boundary; not for navigation.",
+    "demo_only": true,
+    "source": "ORCA Local Demo GeoJSON"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "IMBL_DEMO_SEGMENT_01",
+        "name": "India-Sri Lanka Maritime Demo Boundary",
+        "boundary_type": "IMBL_SAMPLE",
+        "demo_only": true,
+        "warning": "DEMO ONLY / APPROXIMATE / NOT FOR NAVIGATION"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [79.0400, 9.1000],
+          [79.2200, 9.2167],
+          [79.5333, 9.3667],
+          [79.8000, 9.6667],
+          [80.0500, 9.9833],
+          [80.3333, 10.0833],
+          [80.5000, 10.5000]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "EEZ_DEMO_WEST_COAST",
+        "name": "India West Coast EEZ Demo Sample",
+        "boundary_type": "EEZ_SAMPLE",
+        "demo_only": true,
+        "warning": "DEMO ONLY / APPROXIMATE / NOT FOR NAVIGATION"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [68.5000, 23.5000],
+          [68.0000, 21.0000],
+          [69.0000, 19.0000],
+          [70.5000, 17.0000],
+          [72.0000, 14.0000],
+          [73.5000, 10.0000],
+          [75.0000, 7.5000]
+        ]
+      }
+    }
+  ]
+}
